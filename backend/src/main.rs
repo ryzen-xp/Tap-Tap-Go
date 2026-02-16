@@ -1,11 +1,10 @@
-mod database;
+use std::env;
+
 mod server;
-mod errors;
-mod models;
 
-#[tokio::main]
-async fn main() {
-    database::client::connect().await;
+fn main() {
 
-    server::server::start().await;
+    let url = env::var("DATABASE_URL").expect("Failed to read DATABASE URL!!");
+
+     
 }
