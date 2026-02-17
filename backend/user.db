@@ -1,0 +1,6 @@
+CREATE TABLE users (
+    id UUID PRIMARY KEY,
+    username TEXT UNIQUE NOT NULL,
+    device_sign TEXT UNIQUE NOT NULL,
+    created_at TIMESTAMP DEFAULT NOW()
+);

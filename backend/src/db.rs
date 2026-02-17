@@ -1,9 +1,8 @@
-use std::env;
 use sqlx::{PgPool, postgres::PgPoolOptions};
+use std::env;
 
 pub async fn connect_db() -> PgPool {
-    let url = env::var("DATABASE_URL")
-        .expect("failed to read DATABASE_URL");
+    let url = env::var("DATABASE_URL").expect("failed to read DATABASE_URL");
 
     println!("Connecting to PostgreSQL...");
 
